@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      body { font-family: Arial, sans-serif; }
+      input[type="text"] { width: 100%; padding: 5px; margin-bottom: 10px; }
+      input[type="submit"] { padding: 5px 10px; }
+      #output { margin-top: 20px; }
+      .path { font-weight: bold; margin-bottom: 10px; }
+      .link-path { margin-bottom: 10px; }
+    </style>
+  </head>
+  <body>
+    <h2>Input Google Drive sharing link</h2>
+    <form id="myForm">
+      <input type="text" id="fileUrl" name="fileUrl" placeholder="https://drive.google.com/file/d/..." required>
+      <input type="submit" value="Obtain file information">
+    </form>
+    <div id="output"></div>
+    <script>
+      function handleFormSubmit(event) {
+        event.preventDefault();
+        var fileUrl = document.getElementById('fileUrl').value;
+        google.script.run.withSuccessHandler(updateOutput).withFailureHandler(showError).processFileUrl(fileUrl);
+      }
+      function updateOutput(result) {
+        var output = '<div class="path">Path: ' + result.path + '</div>';
+        output += '<div class="link-path">Path with markdown link: ' + result.linkPath + '</div>';
+        output += '<pre>' + JSON.stringify(result, null, 2) + '</pre>';
+        document.getElementById('output').innerHTML = output;
+      }
+      function showError(error) {
+        document.getElementById('output').innerHTML = '<p style="color: red;">Error：' + error + '</p>';
+      }
+      document.getElementById('myForm').addEventListener('submit', handleFormSubmit);
+    </script>
+  </body>
+</html>
