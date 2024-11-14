@@ -7,6 +7,12 @@
 
 This is a Google Apps Script project that helps users find the complete path of files or folders in Google Drive.
 
+## Support This Project
+
+If you find this project helpful, feel free to buy me a coffee!
+
+<a href="https://www.buymeacoffee.com/whoami885" target="_blank"> <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60" width="217"> </a>
+
 ## Features
 
 - Support path queries for files and folders
@@ -55,6 +61,14 @@ VaalRL
 # 繁體中文
 
 這是一個 Google Apps Script 專案，可以幫助使用者獲取 Google Drive 檔案或資料夾的完整路徑。
+
+## 支持這個專案
+
+如果您覺得這個專案對您有幫助，可以請我喝杯咖啡！
+
+<a href="https://www.buymeacoffee.com/whoami885" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60" width="217">
+</a>
 
 ## 功能特點
 
